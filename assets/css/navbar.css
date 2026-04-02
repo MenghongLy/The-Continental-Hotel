@@ -188,96 +188,101 @@ h6 {
 }
 
 /* Mobile Navigation Toggle */
-.mobile-nav-toggle {
-  display: none;
+.btn-offcanvas {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
   font-size: 28px;
   color: var(--accent-color);
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.mobile-nav-toggle:hover {
-  transform: scale(1.1);
+.btn-offcanvas:hover {
+  transform: scale(1.15);
+  color: #d4a76f;
 }
 
-.mobile-nav-toggle.active {
-  color: var(--accent-color);
-  transform: rotate(90deg);
+.btn-offcanvas:focus {
+  box-shadow: none !important;
+  outline: none;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 991px) {
-  .navmenu ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background-color: var(--nav-mobile-background-color);
-    padding: 20px 0;
-    border-top: 2px solid var(--accent-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    z-index: 999;
-  }
-
-  .navmenu ul.active {
-    display: flex;
-  }
-
-  .navmenu ul li {
-    width: 100%;
-    padding: 0;
-  }
-
-  .navmenu ul li a {
-    padding: 12px 20px;
-    border-bottom: 1px solid rgba(197, 157, 95, 0.2);
-  }
-
-  .navmenu ul li a::after {
-    display: none;
-  }
-
-  .navmenu ul li a:hover {
-    background-color: rgba(197, 157, 95, 0.1);
-    padding-left: 25px;
-  }
-
-  .mobile-nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .branding .container {
-    gap: 20px;
-  }
-
-  .sitename {
-    font-size: 22px;
-  }
+/* Offcanvas Styling */
+.offcanvas {
+  background-color: var(--background-color) !important;
+  z-index: 1050;
 }
 
-@media (max-width: 576px) {
-  .sitename {
-    font-size: 18px;
-  }
-
-  .navmenu ul {
-    gap: 0;
-  }
-
-  .mobile-nav-toggle {
-    font-size: 24px;
-  }
-
-  .topbar {
-    display: none;
-  }
+.offcanvas-header {
+  background: linear-gradient(135deg, rgba(197, 157, 95, 0.1) 0%, rgba(197, 157, 95, 0.05) 100%);
+  border-bottom: 1px solid rgba(197, 157, 95, 0.2);
+  padding: 20px !important;
 }
+
+.offcanvas-title {
+  color: var(--heading-color) !important;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.btn-close {
+  filter: invert(1) !important;
+  opacity: 0.8 !important;
+  transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+  opacity: 1 !important;
+}
+
+.offcanvas-body {
+  padding: 20px 0 !important;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0;
+}
+
+.nav-link {
+  color: var(--nav-color) !important;
+  font-family: var(--nav-font);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 25px !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+  background-color: rgba(197, 157, 95, 0.08);
+  border-left-color: var(--accent-color);
+  padding-left: 30px !important;
+}
+
+.nav-link.active {
+  color: var(--accent-color) !important;
+  background-color: rgba(197, 157, 95, 0.12);
+  border-left-color: var(--accent-color);
+  font-weight: 600;
+}
+
 /* ========== FOOTER STYLING ========== */
 .footer {
   background-color: #1a1c1f;
@@ -291,19 +296,8 @@ h6 {
   margin: 0 auto;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
 .footer-section {
   animation: fadeIn 0.6s ease-in;
-}
-
-.footer-about {
-  grid-column: span 1;
 }
 
 .footer-logo {
@@ -458,41 +452,131 @@ h6 {
   }
 }
 
-/* ========== FOOTER RESPONSIVE ========== */
+/* ========== RESPONSIVE NAVBAR STYLES ========== */
+@media (max-width: 1200px) {
+  .sitename {
+    font-size: 24px;
+  }
+
+  .navmenu ul {
+    gap: 25px;
+  }
+
+  .navmenu ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .branding {
+    padding: 12px 0;
+  }
+
+  .sitename {
+    font-size: 22px;
+  }
+
+  .navmenu ul {
+    gap: 20px;
+  }
+
+  .navmenu ul li a {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}
+
 @media (max-width: 768px) {
-  .footer {
-    padding: 40px 15px 15px;
+  .header .topbar {
+    height: 35px;
+    font-size: 12px;
   }
 
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .header .topbar .contact-info i {
+    font-size: 12px;
   }
 
-  .footer-about {
-    grid-column: span 1;
+  .contact-info a,
+  .contact-info span {
+    font-size: 11px;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  .branding {
+    padding: 12px 0;
   }
 
-  .footer-copyright {
-    text-align: center;
+  .branding .container {
+    flex-wrap: nowrap;
+  }
+
+  .sitename {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .navmenu {
+    display: none !important;
+  }
+
+  .btn-offcanvas {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .topbar {
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .header .topbar .contact-info {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .header .topbar .contact-info i {
+    font-size: 11px;
+  }
+
+  .header .topbar .contact-info i a,
+  .header .topbar .contact-info i span {
+    font-size: 10px;
+    padding-left: 3px;
+  }
+
+  .header .topbar .contact-info i.ms-4 {
+    margin-left: 8px !important;
+  }
+
+  .branding {
+    padding: 10px 0;
+  }
+
+  .sitename {
+    font-size: 18px;
+    letter-spacing: 0px;
+  }
+
+  .btn-offcanvas {
+    font-size: 22px !important;
+  }
+
+  .offcanvas-title {
+    font-size: 18px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 12px 20px !important;
   }
 
   .footer-socials {
     justify-content: center;
+    width: 100%;
   }
 
-  .footer-title {
-    font-size: 16px;
-  }
-
-  .footer-links a {
-    font-size: 13px;
+  .footer-copyright {
+    text-align: center;
+    width: 100%;
   }
 }
