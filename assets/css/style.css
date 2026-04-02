@@ -222,6 +222,10 @@ h6 {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1);
   animation: slideUp 0.6s ease-out;
   transition: all 0.3s ease;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .booking-form:hover {
@@ -234,6 +238,8 @@ h6 {
   display: flex;
   flex-direction: column;
   position: relative;
+  flex: 1;
+  min-width: 70px;
 }
 
 .form-group label {
@@ -299,6 +305,7 @@ h6 {
   box-shadow: 0 4px 15px rgba(197, 157, 95, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
+  align-self: flex-end;
 }
 
 .btn-search:hover {
