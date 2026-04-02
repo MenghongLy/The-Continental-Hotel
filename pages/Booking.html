@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Booking - The Continental Hotel</title>
+    <link rel="stylesheet" href="../assets/css/heng.css">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
      <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="chrome-extension://b9320cb4-3119-4d77-bf0e-43c41239dc2c/app/content-style.css">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Comfortaa:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 </head>
-</head>
+<body>
 <header id="header" class="header sticky-top">
 
     <div class="topbar d-flex align-items-center dark-background">
@@ -35,8 +33,8 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="rooms.html"class="active">Rooms</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Rooms.html">Rooms</a></li>
             <li><a href="Amentites.html">Amenities</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -48,10 +46,153 @@
     </div>
 
   </header>
-<body>
- 
-</body>
- <footer class="footer">
+
+<main id="main" class="main">
+  <!-- Page Title -->
+  <div class="page-title">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Booking</li>
+        </ol>
+      </nav>
+      <h1>Book Your Stay</h1>
+    </div>
+  </div>
+
+  <!-- Booking Section -->
+  <section class="booking-page-section">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <!-- Left Column - Room Preview -->
+        <div class="col-lg-5">
+          <div class="booking-preview">
+            <img src="https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-1.webp" alt="Room Preview" class="img-fluid rounded-3 mb-3">
+            <div class="preview-info">
+              <div class="preview-price">
+                <span class="price-label">From</span>
+                <span class="price-amount">$299</span>
+                <span class="price-period">per night</span>
+              </div>
+              <div class="preview-rating">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="rating-text">4.9 (247 reviews)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Booking Form -->
+        <div class="col-lg-7">
+          <div class="booking-card">
+            <div class="booking-header">
+              <span class="booking-badge">PREMIUM RESERVATIONS</span>
+              <h2>Reserve Your Escape</h2>
+              <p>Experience unmatched elegance in our meticulously designed suites. Every moment of your stay is crafted to create lasting memories in the heart of the city.</p>
+            </div>
+
+            <form class="booking-form-main" id="bookingForm">
+              <!-- Dates Row -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Arrival</label>
+                  <input type="date" class="form-input" placeholder="dd/mm/yyyy" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Departure</label>
+                  <input type="date" class="form-input" placeholder="dd/mm/yyyy" required>
+                </div>
+              </div>
+
+              <!-- Guests Row (3 columns) -->
+              <div class="form-row" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="form-group">
+                  <label class="form-label">Adults</label>
+                  <select class="form-input">
+                    <option>Select</option>
+                    <option>1 Adult</option>
+                    <option>2 Adults</option>
+                    <option>3 Adults</option>
+                    <option>4+ Adults</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Children</label>
+                  <input type="number" class="form-input" placeholder="0" min="0">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Rooms</label>
+                  <select class="form-input">
+                    <option>Select</option>
+                    <option>1 Room</option>
+                    <option>2 Rooms</option>
+                    <option>3 Rooms</option>
+                    <option>4+ Rooms</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Personal Information -->
+              <div class="form-group full-width">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Room Preference (Optional)</label>
+                <select class="form-input">
+                  <option>Select Room Type</option>
+                  <option>Standard Room</option>
+                  <option>Deluxe Room</option>
+                  <option>Suite</option>
+                  <option>Penthouse</option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-booking"><i class="bi bi-check-circle me-2"></i>Check Availability</button>
+            </form>
+
+            <!-- Additional Info -->
+            <div class="booking-benefits">
+              <div class="benefit-item">
+                <i class="bi bi-shield-check"></i>
+                <span>Instant Confirmation</span>
+              </div>
+              <div class="benefit-item">
+                <i class="bi bi-lock"></i>
+                <span>Secure Booking</span>
+              </div>
+              <div class="benefit-item">
+                <i class="bi bi-telephone"></i>
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
     <div class="container">
       <div class="row g-4">
         <!-- Company Info -->
@@ -115,5 +256,25 @@
       </div>
     </div>
   </footer>
-    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script>
+  // Mobile navigation toggle
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.querySelector('.navmenu ul');
+  
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', () => {
+      navmenu.classList.toggle('active');
+      mobileNavToggle.classList.toggle('active');
+    });
+  }
+
+  // Form submission
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your booking request! We will confirm your reservation shortly.');
+  });
+</script>
+
+</body>
 </html>
