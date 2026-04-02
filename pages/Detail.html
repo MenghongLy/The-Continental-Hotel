@@ -1,14 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>About Us</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/heng.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="chrome-extension://b9320cb4-3119-4d77-bf0e-43c41239dc2c/app/content-style.css">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Comfortaa:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 </head>
+</head>
+<header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center dark-background">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">The Continental Hotel @hotmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+855 23636363</span></i>
+        </div>
+      </div>
+    </div>
+    <div class="branding d-flex align-items-cente">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="../index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">The Continental Hotel</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="rooms.html"class="active">Rooms</a></li>
+            <li><a href="Amentites.html">Amenities</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
 <body>
- 
+<main id="main" class="main">
+
+  <div class="container pt-5">
+    <!-- Carousel -->
+    <div class="detail-carousel">
+      <div class="carousel-container">
+        <img class="carousel-image" src="https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-1.webp" alt="Room">
+        <button class="carousel-nav prev" onclick="previousSlide()"><i class="bi bi-chevron-left"></i></button>
+        <button class="carousel-nav next" onclick="nextSlide()"><i class="bi bi-chevron-right"></i></button>
+        <div class="carousel-dots">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="detail-content">
+      <div class="detail-left">
+        <p class="room-description">
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae molestie convallis tempor. 
+          Experience the epitome of luxury in our spacious suite with stunning panoramic ocean views.
+        </p>
+
+        <div class="room-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-people"></i>
+            </div>
+            <div class="feature-text">
+              <h6>Guest Capacity</h6>
+              <p>Up to 3 adults</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-rulers"></i>
+            </div>
+            <div class="feature-text">
+              <h6>Room Size</h6>
+              <p>720 sq ft</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-door-closed"></i>
+            </div>
+            <div class="feature-text">
+              <h6>Room Type</h6>
+              <p>Queen bed + Daybed</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-map"></i>
+            </div>
+            <div class="feature-text">
+              <h6>View</h6>
+              <p>Harbor & City</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-right">
+        <div class="pricing-sidebar">
+          <div class="price-tag">$285</div>
+          <div class="price-period">/ night</div>
+          <div class="original-price">$340</div>
+
+          <form class="booking-form">
+            <label class="form-label">Check-in & Check-out</label>
+            <input type="text" class="form-input w-100" placeholder="Select dates">
+
+            <label class="form-label">Guests</label>
+            <select class="form-input w-100">
+              <option>1 Adult</option>
+              <option>2 Adults</option>
+              <option>3 Adults</option>
+              <option>4 Adults</option>
+            </select>
+
+            <a href="Booking.html" class="btn-check-availability w-100 d-inline-block text-center" style="display: flex; align-items: center; justify-content: center;">Check Availability</a>
+            <div class="cancellation-info text-center mt-1">
+              <i class="bi bi-info-circle"></i> Free cancellation until 24h before
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs Section -->
+    <div class="detail-tabs">
+      <button class="tab-link active" onclick="openTab(event, 'room-details')">Room Details</button>
+      <button class="tab-link" onclick="openTab(event, 'hotel-policies')">Hotel Policies</button>
+      <button class="tab-link" onclick="openTab(event, 'area-info')">Area Info</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="room-details" class="tab-content active">
+      <div class="section-details">
+        <div class="detail-section">
+          <h4>Room Description</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Ut suscipit rutrum urna id vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+          <p>Donec auctor blandit quam, ac finibus ante pulvinar ac. Sed congue lorem non lorem cursus, vel cursus nulla scelerisque. Aliquam erat volutpat. Mauris luctus sapien vel fermentum lobortis.</p>
+        </div>
+
+        <div class="detail-section">
+          <h4>Suite Amenities</h4>
+          <ul class="detail-list">
+            <li><i class="bi bi-wifi"></i> Complimentary Wi-Fi</li>
+            <li><i class="bi bi-tv"></i> 49" Smart TV</li>
+            <li><i class="bi bi-droplet"></i> Electronic Safe</li>
+            <li><i class="bi bi-phone"></i> Direct Dial Phone</li>
+            <li><i class="bi bi-water"></i> Rainfall Shower</li>
+            <li><i class="bi bi-gem"></i> Premium Bath Products</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-details">
+        <div class="detail-section">
+          <h4>Bed Configuration</h4>
+          <ul class="detail-list">
+            <li>1 Queen sized bed (160cm x 200cm)</li>
+            <li>1 Daybed for additional guest</li>
+            <li>Premium memory foam mattress</li>
+            <li>Hypoallergenic bedding</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h4>Bathroom Features</h4>
+          <ul class="detail-list">
+            <li>Marble bathroom with heated floors</li>
+            <li>Separate rainfall shower</li>
+            <li>Premium toiletries included</li>
+            <li>Hair dryer and magnifying mirror</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="hotel-policies" class="tab-content">
+      <div class="section-details">
+        <div class="detail-section">
+          <h4>Cancellation Policy</h4>
+          <p>Free cancellation up to 24 hours before check-in. Bookings cancelled within 24 hours of arrival will be charged one night's room rate.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Check-in & Check-out</h4>
+          <p>Check-in: 3:00 PM | Check-out: 11:00 AM. Early check-in and late check-out may be available upon request.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="area-info" class="tab-content">
+      <div class="section-details">
+        <div class="detail-section">
+          <h4>Area Information</h4>
+          <p>Located in the heart of the city, our hotel offers easy access to major attractions, restaurants, and shopping districts. Public transportation is within walking distance.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Nearby Attractions</h4>
+          <ul class="detail-list">
+            <li>Arts & Cultural Center - 2 min</li>
+            <li>Gourmet Dining Quarter - 5 min</li>
+            <li>Central Recreation Park - 4 min</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional Services -->
+    <section class="optional-services">
+      <h2 class="services-title">Optional Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-cup-hot"></i>
+          </div>
+          <h5>Continental Breakfast</h5>
+          <p>Fresh pastries, seasonal fruits, coffee and tea selection served daily from 6:30 AM to 10:30 AM.</p>
+          <div class="service-price">$28 per person</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-car-front"></i>
+          </div>
+          <h5>Valet Parking</h5>
+          <p>Convenient valet parking service available 24/7. Your vehicle will be safely stored in our secure garage.</p>
+          <div class="service-price">$35 per night</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="bi bi-heart"></i>
+          </div>
+          <h5>Wellness Package</h5>
+          <p>Access to fitness center, indoor pool, and complimentary yoga classes during your stay.</p>
+          <div class="service-price">$65 per stay</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="cta-content">
+        <h3>Book Your Deluxe Ocean Suite</h3>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Experience comfort and luxury with stunning harbor views.</p>
+        <ul class="cta-benefits">
+          <li><i class="bi bi-check-circle"></i> Best Rate Guarantee</li>
+          <li><i class="bi bi-check-circle"></i> 24/7 Guest Services</li>
+        </ul>
+      </div>
+
+      <div class="cta-actions">
+        <div style="margin-bottom: 1rem; text-align: right;">
+          <div class="price-label">Starting from</div>
+          <div class="price-display-right">$285</div>
+          <div class="price-label">per night</div>
+        </div>
+        <button class="btn-reserve">Reserve Now</button>
+        <button class="btn-call"><i class="bi bi-telephone me-2"></i>Call to Book</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Carousel
+  const carouselImages = [
+    'https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-1.webp',
+    'https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-3.webp',
+    'https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-5.webp',
+    'https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-7.webp'
+  ];
+  let currentIndex = 0;
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % carouselImages.length;
+    updateCarousel();
+  }
+
+  function previousSlide() {
+    currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+    updateCarousel();
+  }
+
+  function currentSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    document.querySelector('.carousel-image').src = carouselImages[currentIndex];
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+
+  // Tabs
+  function openTab(evt, tabName) {
+    const tablinks = document.querySelectorAll('.tab-link');
+    const tabcontents = document.querySelectorAll('.tab-content');
+    
+    tabcontents.forEach(content => content.classList.remove('active'));
+    tablinks.forEach(link => link.classList.remove('active'));
+    
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+
+  // Mobile nav toggle
+  document.querySelector('.mobile-nav-toggle')?.addEventListener('click', function() {
+    const navmenu = document.querySelector('.navmenu ul');
+    navmenu.classList.toggle('active');
+    this.classList.toggle('active');
+  });
+</script>
+
 </body>
+ <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Company Info -->
+        <div class="footer-section footer-about">
+          <h3 class="footer-logo">The Continental Hotel</h3>
+          <p class="footer-address">A108 Adam Street<br>New York, NY 535022</p>
+          <div class="footer-contact">
+            <p><strong>Phone:</strong> <a href="tel:+15589554888">+1 5589 55488 55</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+          </div>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="footer-section">
+          <h4 class="footer-title">Useful Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/About.html">About us</a></li>
+            <li><a href="pages/Amentites.html">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-section">
+          <h4 class="footer-title">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Free Wifi</a></li>
+            <li><a href="#">Spa and Sona</a></li>
+            <li><a href="#">Parking</a></li>
+            <li><a href="#">Room Service</a></li>
+            <li><a href="#">Swimming Pool</a></li>
+          </ul>
+        </div>
+
+        <!-- Information -->
+        <div class="footer-section">
+          <h4 class="footer-title">Information</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Phone</a></li>
+            <li><a href="#">Suscipit distinctio</a></li>
+            <li><a href="#">Room Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; Copyright <strong>The Continental Hotel</strong>. All Rights Reserved</p>
+          <p>Designed by <span class="designer">KING CHHAY</span></p>
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
