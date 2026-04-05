@@ -334,7 +334,7 @@
             <div class="selection-item aos-init aos-animate" data-aos="slide-up" data-aos-delay="350">
               <div class="item-image">
                 <img
-                  src="https://hotelroyalsignature.com/wp-content/uploads/2023/08/family-suite-room-interior-deluxe-twin-2.jpg"
+                  src="https://www.parkregiskriskin.ae/wp-content/uploads/2020/07/room-twin-bed-2520x1400.jpg"
                   alt="Family Suite" class="img-fluid">
                 <div class="price-overlay">$459</div>
               </div>
@@ -578,6 +578,8 @@
     mobileNavToggle.addEventListener('click', () => {
       navmenu.classList.toggle('active');
       mobileNavToggle.classList.toggle('active');
+      mobileNavToggle.classList.toggle('bi-list');
+      mobileNavToggle.classList.toggle('bi-x');
     });
 
     // Close menu when a link is clicked
@@ -585,7 +587,18 @@
       link.addEventListener('click', () => {
         navmenu.classList.remove('active');
         mobileNavToggle.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
       });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navmenu.classList.remove('active');
+        mobileNavToggle.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      }
     });
   }
 

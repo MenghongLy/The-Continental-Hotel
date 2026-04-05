@@ -327,12 +327,36 @@
     evt.currentTarget.classList.add('active');
   }
 
-  // Mobile nav toggle
-  document.querySelector('.mobile-nav-toggle')?.addEventListener('click', function() {
-    const navmenu = document.querySelector('.navmenu ul');
-    navmenu.classList.toggle('active');
-    this.classList.toggle('active');
-  });
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.querySelector('.navmenu ul');
+  const navLinks = document.querySelectorAll('.navmenu ul li a');
+
+  if (mobileNavToggle && navmenu) {
+    mobileNavToggle.addEventListener('click', () => {
+      navmenu.classList.toggle('active');
+      mobileNavToggle.classList.toggle('active');
+      mobileNavToggle.classList.toggle('bi-list');
+      mobileNavToggle.classList.toggle('bi-x');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navmenu.classList.remove('active');
+        mobileNavToggle.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navmenu.classList.remove('active');
+        mobileNavToggle.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      }
+    });
+  }
 </script>
 
 </body>

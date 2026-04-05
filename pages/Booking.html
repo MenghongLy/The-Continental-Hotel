@@ -179,14 +179,34 @@
   </section>
 </main>
 <script>
-  // Mobile navigation toggle
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const navmenu = document.querySelector('.navmenu ul');
+  const navLinks = document.querySelectorAll('.navmenu ul li a');
   
-  if (mobileNavToggle) {
+  if (mobileNavToggle && navmenu) {
     mobileNavToggle.addEventListener('click', () => {
       navmenu.classList.toggle('active');
       mobileNavToggle.classList.toggle('active');
+      mobileNavToggle.classList.toggle('bi-list');
+      mobileNavToggle.classList.toggle('bi-x');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navmenu.classList.remove('active');
+        mobileNavToggle.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navmenu.classList.remove('active');
+        mobileNavToggle.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      }
     });
   }
 
