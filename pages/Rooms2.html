@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <link rel="stylesheet" href="../assets/css/heng.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="chrome-extension://b9320cb4-3119-4d77-bf0e-43c41239dc2c/app/content-style.css">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Comfortaa:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center dark-background">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">The Continental
+                        Hotel
+                        @hotmail.com</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+855 23636363</span></i>
+            </div>
+        </div>
+    </div>
+    <div class="branding d-flex align-items-cente">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="../index.html" class="logo d-flex align-items-center">
+                <h1 class="sitename">The Continental Hotel</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="rooms.html" class="active">Rooms</a></li>
+                    <li><a href="Amentites.html">Amenities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+
+<body>
+    <main id="main" class="main">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Filter & Sort Bar -->
+                <div class="col-12">
+                    <div class="rooms-filters">
+                        <!-- Filter Section -->
+                        <div class="row g-2 g-md-3 mb-3 mb-md-4 align-items-center">
+                            <div class="col-12 col-md-auto">
+                                <span class="h6 mb-2 mb-md-0 d-block d-md-inline">Filter by:</span>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-auto">
+                                <select class="form-select form-select-sm form-select-md" aria-label="Price Range">
+                                    <option selected>Price</option>
+                                    <option value="1">$100 - $200</option>
+                                    <option value="2">$200 - $400</option>
+                                    <option value="3">$400 - $600</option>
+                                    <option value="4">$600+</option>
+                                </select>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-auto">
+                                <select class="form-select form-select-sm form-select-md" aria-label="Capacity">
+                                    <option selected>Capacity</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">4 Guests</option>
+                                    <option value="4">6+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-auto">
+                                <select class="form-select form-select-sm form-select-md" aria-label="View Type">
+                                    <option selected>View</option>
+                                    <option value="1">Ocean View</option>
+                                    <option value="2">City View</option>
+                                    <option value="3">Garden View</option>
+                                    <option value="4">Mountain View</option>
+                                </select>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-auto ms-md-auto">
+                                <span class="h6 mb-2 mb-md-0 d-block d-md-inline">Sort:</span>
+                            </div>
+                            <div class="col-12 col-md-auto">
+                                <select class="form-select form-select-sm form-select-md w-100" aria-label="Sort">
+                                    <option selected>Popularity</option>
+                                    <option value="1">Price: Low to High</option>
+                                    <option value="2">Price: High to Low</option>
+                                    <option value="3">Newest</option>
+                                    <option value="4">Rating</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room Cards -->
+                <!-- Room 7 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="room-item h-100">
+                        <div class="pic">
+                            <img src="https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-2.webp"
+                                class="img-fluid w-100" alt="Mountain View Retreat">
+                            <div class="room-badge">
+                                <span class="badge">NATURE</span>
+                                <span class="price">$219<small>/night</small></span>
+                            </div>
+                        </div>
+                        <div class="details p-3 p-md-5">
+                            <h4 class="fs-6 fs-md-5">Mountain View Retreat</h4>
+                            <p class="fs-7 fs-md-6">Sit amet consectetur adipiscing elit sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.</p>
+                            <ul class="amenities">
+                                <li><i class="bi bi-people"></i> 2-3 Guests</li>
+                                <li><i class="bi bi-binoculars"></i> Mountain View</li>
+                                <li><i class="bi bi-flower1"></i> Balcony</li>
+                            </ul>
+                            <div class="room-buttons gap-2 gap-md-3">
+                                <a href="../pages/Detail.html"
+                                    class="btn btn-outline-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">VIEW
+                                    DETAILS</a>
+                                <a href="../pages/Booking.html"
+                                    class="btn btn-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">CHECK
+                                    AVAILABILITY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 8 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="room-item h-100">
+                        <div class="pic">
+                            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/557813775.jpg?k=6c6c3766ac115342ed72faff14624e734727afe44cfab287df1a4b70e09f8870&o="
+                                class="img-fluid w-100" alt="Spa & Wellness Suite">
+                            <div class="room-badge">
+                                <span class="badge">WELLNESS</span>
+                                <span class="price">$399<small>/night</small></span>
+                            </div>
+                        </div>
+                        <div class="details p-3 p-md-5">
+                            <h4 class="fs-6 fs-md-5">Spa & Wellness Suite</h4>
+                            <p class="fs-7 fs-md-6">Ut labore et dolore magna aliqua ipsum quia voluptas sit aspernatur
+                                aut odit aut fugit sed quia.</p>
+                            <ul class="amenities">
+                                <li><i class="bi bi-people"></i> 2-4 Guests</li>
+                                <li><i class="bi bi-heart"></i> Spa Bath</li>
+                                <li><i class="bi bi-door-open"></i> Sauna Access</li>
+                            </ul>
+                            <div class="room-buttons gap-2 gap-md-3">
+                                <a href="../pages/Detail.html"
+                                    class="btn btn-outline-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">VIEW
+                                    DETAILS</a>
+                                <a href="../pages/Booking.html"
+                                    class="btn btn-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">CHECK
+                                    AVAILABILITY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 9 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="room-item h-100">
+                        <div class="pic">
+                            <img src="https://cdn.home-designing.com/wp-content/uploads/2015/10/wood-paneling-apartment.jpg"
+                                class="img-fluid w-100" alt="Studio Apartments">
+                            <div class="room-badge">
+                                <span class="badge">BUDGET</span>
+                                <span class="price">$99<small>/night</small></span>
+                            </div>
+                        </div>
+                        <div class="details p-3 p-md-5">
+                            <h4 class="fs-6 fs-md-5">Studio Apartments</h4>
+                            <p class="fs-7 fs-md-6">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                fugit sed quia consequuntur.</p>
+                            <ul class="amenities">
+                                <li><i class="bi bi-people"></i> 1-2 Guests</li>
+                                <li><i class="bi bi-wifi"></i> Free WiFi</li>
+                                <li><i class="bi bi-cup-hot"></i> Kitchenette</li>
+                            </ul>
+                            <div class="room-buttons gap-2 gap-md-3">
+                                <a href="../pages/Detail.html"
+                                    class="btn btn-outline-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">VIEW
+                                    DETAILS</a>
+                                <a href="../pages/Booking.html"
+                                    class="btn btn-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">CHECK
+                                    AVAILABILITY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 10 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="room-item h-100">
+                        <div class="pic">
+                            <img src="https://bootstrapmade.com/content/demo/NiceHotel/assets/img/hotel/room-8.webp"
+                                class="img-fluid w-100" alt="Beachfront Bungalow">
+                            <div class="room-badge">
+                                <span class="badge">BEACH</span>
+                                <span class="price">$449<small>/night</small></span>
+                            </div>
+                        </div>
+                        <div class="details p-3 p-md-5">
+                            <h4 class="fs-6 fs-md-5">Beachfront Bungalow</h4>
+                            <p class="fs-7 fs-md-6">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+                                eiusmod tempor incididunt ut labore.</p>
+                            <ul class="amenities">
+                                <li><i class="bi bi-people"></i> 4-6 Guests</li>
+                                <li><i class="bi bi-water"></i> Beach Access</li>
+                                <li><i class="bi bi-door-open"></i> Private Pool</li>
+                            </ul>
+                            <div class="room-buttons gap-2 gap-md-3">
+                                <a href="../pages/Detail.html"
+                                    class="btn btn-outline-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">VIEW
+                                    DETAILS</a>
+                                <a href="../pages/Booking.html"
+                                    class="btn btn-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">CHECK
+                                    AVAILABILITY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 11 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="room-item h-100">
+                        <div class="pic">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEm8gGyJ4DgABUtnSMsLFRJd9YIIDgAhmZ0Q&s"
+                                class="img-fluid w-100" alt="Penthouse Sky Club">
+                            <div class="room-badge">
+                                <span class="badge">EXCLUSIVE</span>
+                                <span class="price">$699<small>/night</small></span>
+                            </div>
+                        </div>
+                        <div class="details p-3 p-md-5">
+                            <h4 class="fs-6 fs-md-5">Penthouse Sky Club</h4>
+                            <p class="fs-7 fs-md-6">Sit amet consectetur adipiscing elit sed do ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat.</p>
+                            <ul class="amenities">
+                                <li><i class="bi bi-people"></i> 6+ Guests</li>
+                                <li><i class="bi bi-eye"></i> Rooftop View</li>
+                                <li><i class="bi bi-door-open"></i> Elevator Access</li>
+                            </ul>
+                            <div class="room-buttons gap-2 gap-md-3">
+                                <a href="../pages/Detail.html"
+                                    class="btn btn-outline-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">VIEW
+                                    DETAILS</a>
+                                <a href="../pages/Booking.html"
+                                    class="btn btn-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">CHECK
+                                    AVAILABILITY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 12 -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="room-item h-100">
+                        <div class="pic">
+                            <img src="https://images.stockcake.com/public/6/d/d/6dde3eb2-4e23-40f5-a1cc-f461d5a81466_large/artist-s-studio-stockcake.jpg"
+                                class="img-fluid w-100" alt="Artist Loft Studio">
+                            <div class="room-badge">
+                                <span class="badge">CREATIVE</span>
+                                <span class="price">$279<small>/night</small></span>
+                            </div>
+                        </div>
+                        <div class="details p-3 p-md-5">
+                            <h4 class="fs-6 fs-md-5">Artist Loft Studio</h4>
+                            <p class="fs-7 fs-md-6">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat duis aute irure.</p>
+                            <ul class="amenities">
+                                <li><i class="bi bi-people"></i> 1-2 Guests</li>
+                                <li><i class="bi bi-easel"></i> Studio Space</li>
+                                <li><i class="bi bi-palette"></i> Art Supplies</li>
+                            </ul>
+                            <div class="room-buttons gap-2 gap-md-3">
+                                <a href="../pages/Detail.html"
+                                    class="btn btn-outline-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">VIEW
+                                    DETAILS</a>
+                                <a href="../pages/Booking.html"
+                                    class="btn btn-primary px-2 px-md-3 py-2 py-md-3 fs-8 fs-md-7">CHECK
+                                    AVAILABILITY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More / Pagination -->
+                <div class="col-12 text-center">
+                    <a href="Rooms.html" class="btn btn-load-more my-4 my-md-5">← PREVIOUS</a>
+                    <a href="Rooms3.html" class="btn btn-load-more my-4 my-md-5">NEXT →</a>
+                    <p class="showing-text fs-7 fs-md-6">Showing 7-12 of 18 rooms</p>
+                </div>
+
+            </div>
+        </div>
+        </section><!-- /Rooms Section -->
+
+    </main>
+</body>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Company Info -->
+            <div class="footer-section footer-about">
+                <h3 class="footer-logo">The Continental Hotel</h3>
+                <p class="footer-address">A108 Adam Street<br>New York, NY 535022</p>
+                <div class="footer-contact">
+                    <p><strong>Phone:</strong> <a href="tel:+15589554888">+1 5589 55488 55</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="footer-section">
+                <h4 class="footer-title">Useful Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/About.html">About us</a></li>
+                    <li><a href="pages/Amentites.html">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Our Services -->
+            <div class="footer-section">
+                <h4 class="footer-title">Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Free Wifi</a></li>
+                    <li><a href="#">Spa and Sona</a></li>
+                    <li><a href="#">Parking</a></li>
+                    <li><a href="#">Room Service</a></li>
+                    <li><a href="#">Swimming Pool</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-section">
+                <h4 class="footer-title">Information</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Suscipit distinctio</a></li>
+                    <li><a href="#">Room Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; Copyright <strong>The Continental Hotel</strong>. All Rights Reserved</p>
+                <p>Designed by <span class="designer">KING CHHAY</span></p>
+            </div>
+            <div class="footer-socials">
+                <a href="#" class="social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>
