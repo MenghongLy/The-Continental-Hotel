@@ -86,10 +86,12 @@ section,
 .feature-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(45deg, rgba(197, 157, 95, 0.55), rgba(25, 27, 30, 0.66));
     display: flex;
-    align-items: end;
-    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .feature-icon {
@@ -99,6 +101,16 @@ section,
     color: var(--contrast-color);
     font-size: 1.35rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transform: scale(0.82);
+    transition: transform 0.3s ease;
+}
+
+.amenities .amenity-feature:hover .feature-overlay {
+    opacity: 1;
+}
+
+.amenities .amenity-feature:hover .feature-icon {
+    transform: scale(1);
 }
 
 .amenities .amenity-feature .feature-content h3 {
@@ -308,19 +320,14 @@ section,
 }
 
 .contact-page .contact-info-item {
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
+    background: linear-gradient(155deg, color-mix(in srgb, var(--surface-color), #000 7%), var(--surface-color));
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+    border-radius: 14px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
     display: flex;
     align-items: flex-start;
     gap: 1.15rem;
-    padding: 0.55rem 0;
-}
-
-.contact-page .contact-info-item:hover {
-    transform: none;
-    box-shadow: none;
+    padding: 1rem;
 }
 
 .contact-page .info-icon {
@@ -455,5 +462,812 @@ section,
 
     .contact-page .map-container iframe {
         height: 340px;
+    }
+}
+
+/* About page */
+.about-page .about {
+    background:
+        linear-gradient(170deg, rgba(197, 157, 95, 0.08), transparent 22%),
+        linear-gradient(var(--background-color), color-mix(in srgb, var(--background-color), #000 5%));
+}
+
+.about-page .content h3 {
+    font-size: clamp(1.8rem, 1.5rem + 1.2vw, 2.7rem);
+    margin-bottom: 1rem;
+}
+
+.about-page .content p {
+    color: color-mix(in srgb, var(--default-color), transparent 12%);
+    line-height: 1.8;
+}
+
+.about-page .content {
+    padding-right: clamp(0rem, 2vw, 1rem);
+}
+
+.about-page .stats-wrapper {
+    margin-top: 1.8rem;
+}
+
+.about-page .stats-wrapper .row {
+    row-gap: 0.9rem;
+}
+
+.about-page .stat-item {
+    background: linear-gradient(155deg, color-mix(in srgb, var(--surface-color), #000 8%), var(--surface-color));
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+    border-radius: 14px;
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-page .stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+}
+
+.about-page .stat-number {
+    display: block;
+    font-size: clamp(1.5rem, 1.35rem + 0.8vw, 2.2rem);
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.about-page .stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.about-page .btn-wrapper {
+    margin-top: 1.35rem;
+}
+
+.about-page .btn-wrapper .btn-primary {
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), #fff 3%), color-mix(in srgb, var(--accent-color), #000 14%));
+    color: var(--contrast-color);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+}
+
+.about-page .btn-wrapper .btn-primary:hover {
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+}
+
+.about-page .image-stack {
+    position: relative;
+    max-width: 620px;
+    margin-inline: auto;
+    padding-bottom: 2.1rem;
+}
+
+.about-page .image-stack .main-image {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.33);
+    min-height: 380px;
+    object-fit: cover;
+}
+
+.about-page .image-stack .overlay-image {
+    position: absolute;
+    width: clamp(185px, 38%, 240px);
+    right: -2px;
+    bottom: 0;
+    border-radius: 14px;
+    border: 3px solid color-mix(in srgb, var(--surface-color), #fff 10%);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36);
+}
+
+.about-page .features-section {
+    margin-top: 2rem;
+}
+
+.about-page .features-section .row > [class*="col-"] {
+    display: flex;
+}
+
+.about-page .feature-item {
+    height: 100%;
+    background: linear-gradient(155deg, color-mix(in srgb, var(--surface-color), #000 7%), var(--surface-color));
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+    border-radius: 14px;
+    padding: 1.35rem;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.26);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
+}
+
+.about-page .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.32);
+}
+
+.about .features-section .feature-item .icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--accent-color),
+ color-mix(in srgb, var(--accent-color), black 20%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.about .features-section .feature-item .icon i {
+    font-size: 2rem;
+}
+
+.about-page .feature-item h4 {
+    margin-bottom: 0.55rem;
+}
+
+.about-page .feature-item p {
+    color: color-mix(in srgb, var(--default-color), transparent 12%);
+    margin-bottom: 0;
+}
+
+.about-page .awards-section {
+    margin-top: 2.25rem;
+}
+
+.about-page .awards-header {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.about-page .awards-header h3 {
+    margin-bottom: 0.45rem;
+}
+
+.about-page .awards-header p {
+    color: color-mix(in srgb, var(--default-color), transparent 14%);
+}
+
+.about-page .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.about-page .award-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--surface-color), #000 7%);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+}
+
+.about .awards-section .award-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid
+ color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.about-page .award-icon {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    background: color-mix(in srgb, var(--accent-color), transparent 82%);
+    flex-shrink: 0;
+}
+
+.about-page .award-icon i {
+    font-size: 1.25rem;
+    line-height: 1;
+    color: inherit;
+}
+
+.about-page .award-content h5 {
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+.about-page .award-content p {
+    margin: 0;
+    color: color-mix(in srgb, var(--default-color), transparent 16%);
+    font-size: 0.92rem;
+}
+
+.about-page .rooms-showcase {
+    background: linear-gradient(135deg, rgba(33, 37, 41, 0.3) 0%, rgba(18, 20, 22, 0.2) 100%);
+    border-top: 1px solid rgba(197, 157, 95, 0.2);
+}
+
+.about-page .rooms-showcase .row.gy-4 > .col-lg-6 {
+    display: flex;
+}
+
+.about-page .rooms-showcase .featured-suite-container,
+.about-page .rooms-showcase .room-selection-grid {
+    width: 100%;
+    height: 100%;
+}
+
+.about-page .rooms-showcase .room-selection-grid {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.about-page .rooms-showcase .room-selection-grid .selection-item {
+    height: 100%;
+}
+
+.about-page .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-page .section-title h2 {
+    font-size: clamp(2rem, 1.5rem + 2.1vw, 3rem);
+    margin-bottom: 0.6rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.75rem;
+}
+
+.about-page .section-title h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 4px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-color) 50%, transparent 100%);
+}
+
+.about-page .section-title p {
+    max-width: 560px;
+    margin-inline: auto;
+    color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+.about-page .featured-suite-container,
+.about-page .selection-item,
+.about-page .overview-card {
+    background: linear-gradient(155deg, color-mix(in srgb, var(--surface-color), #000 8%), var(--surface-color));
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+}
+
+.about-page .featured-suite-container {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.about-page .suite-header,
+.about-page .suite-info {
+    padding: 1.25rem;
+}
+
+.about-page .suite-title h3 {
+    margin-bottom: 0.35rem;
+}
+
+.about-page .suite-location {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.about-page .suite-image-wrapper {
+    height: 360px;
+    overflow: hidden;
+}
+
+.about-page .suite-image-wrapper img,
+.about-page .item-image img,
+.about-page .overview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page .suite-overlay {
+    background: linear-gradient(180deg, transparent 0%, rgba(18, 20, 22, 0.95) 100%);
+}
+
+.about-page .category-pill,
+.about-page .spec-badge,
+.about-page .price-overlay {
+    background: color-mix(in srgb, var(--accent-color), transparent 84%);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 64%);
+    color: var(--accent-color);
+}
+
+.rooms-showcase .featured-suite-container .suite-header .suite-category .category-pill {
+    background: linear-gradient(135deg, var(--accent-color),
+ color-mix(in srgb, var(--accent-color), black 20%));
+    color: var(--contrast-color);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.rooms-showcase .featured-suite-container .suite-header {
+    padding: 32px 32px 18px;
+}
+
+.rooms-showcase .featured-suite-container {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s ease;
+}
+
+.rooms-showcase .featured-suite-container .suite-header .suite-category {
+    margin-bottom: 0.85rem;
+}
+
+.rooms-showcase .featured-suite-container .suite-header .suite-title h3 {
+    margin-bottom: 0.55rem;
+}
+
+.rooms-showcase .featured-suite-container .suite-header .suite-title .suite-location {
+    gap: 0.5rem;
+}
+
+.rooms-showcase .room-selection-grid .selection-item .item-image .price-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.rooms-showcase .room-selection-grid .selection-item .item-details {
+    padding: 20px;
+}
+
+.about-page .suite-booking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+    padding-top: 0.8rem;
+}
+
+.rooms-showcase .featured-suite-container .suite-info .suite-booking .pricing-info {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.about-page .suite-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+}
+
+.about-page .highlight-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.about-page .reserve-btn,
+.about-page .explore-rooms-btn {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), #fff 3%), color-mix(in srgb, var(--accent-color), #000 14%));
+    color: var(--contrast-color);
+    border-radius: 999px;
+    border: 0;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    text-decoration: none;
+}
+
+.about-page .reserve-btn {
+    padding: 0.7rem 1.25rem;
+}
+
+.about-page .explore-rooms-btn {
+    padding: 0.8rem 1.6rem;
+}
+
+.about-page .reserve-btn:hover,
+.about-page .explore-rooms-btn:hover {
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+}
+
+.about-page .room-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.95rem;
+}
+
+.about-page .selection-item {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.about-page .item-image,
+.about-page .overview-image {
+    height: 170px;
+    overflow: hidden;
+}
+
+.about-page .item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 0.95rem;
+}
+
+.about-page .item-details h5 {
+    margin: 0;
+}
+
+.about-page .room-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.85rem;
+}
+
+.about-page .room-selection-grid .selection-item .item-details .view-btn {
+    margin-top: auto;
+    width: fit-content;
+}
+
+.rooms-showcase .room-selection-grid .selection-item .item-details .room-features span {
+    color:
+ color-mix(in srgb, var(--default-color), transparent 45%);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rooms-showcase .room-selection-grid .selection-item .item-details .room-features span i {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+}
+
+.rooms-showcase .room-selection-grid .selection-item .item-details .view-btn {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    border-bottom: none;
+    transition: all 0.3s ease;
+}
+
+.about-page .view-btn {
+    display: inline-block;
+    padding: 0.44rem 0.8rem;
+    border-radius: 999px;
+    border: none;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.about-page .overview-card {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.about-page .overview-content {
+    padding: 0.8rem;
+}
+
+.about-page .overview-content h6 {
+    margin-bottom: 0.35rem;
+}
+
+.about-page .room-amenities {
+    display: inline-flex;
+    gap: 0.45rem;
+}
+
+.about-page .starting-price {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.about-page .special-offer {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page .offer-content {
+    text-align: center;
+    padding: 1rem 0.7rem;
+}
+
+.about-page .offer-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* About card alignment cleanup */
+.about-page .features-section .row,
+.about-page .room-selection-grid,
+.about-page .accommodation-overview {
+    align-items: stretch;
+}
+
+.about-page .feature-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.65rem;
+    padding: 1.5rem 1.25rem;
+}
+
+.about-page .feature-item h4 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+.about-page .feature-item p {
+    margin: 0;
+}
+
+.about-page .selection-item {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.about-page .item-image {
+    height: 182px;
+}
+
+.about-page .item-details {
+    justify-content: flex-start;
+    padding: 1rem 1rem 1.05rem;
+}
+
+.about-page .room-features {
+    margin-bottom: 0.15rem;
+}
+
+.about-page .room-selection-grid .selection-item .item-details .view-btn {
+    align-self: flex-start;
+}
+
+.about-page .overview-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page .overview-image {
+    height: 148px;
+}
+
+.about-page .overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.38rem;
+    min-height: 126px;
+}
+
+.about-page .room-amenities {
+    margin-top: auto;
+}
+
+.about-page .special-offer .offer-content {
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .about-page .rooms-showcase .row.gy-4 > .col-lg-6 {
+        display: block;
+    }
+
+    .about-page .rooms-showcase .room-selection-grid {
+        height: auto;
+        grid-template-rows: none;
+    }
+
+    .about-page .content {
+        padding-right: 0;
+    }
+
+    .about-page .image-stack .main-image {
+        min-height: 320px;
+    }
+
+    .about-page .awards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .suite-image-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-page .about {
+        padding-top: 42px;
+    }
+
+    .about-page .image-stack {
+        padding-bottom: 0;
+    }
+
+    .about-page .image-stack .overlay-image {
+        position: static;
+        width: 100%;
+        margin-top: 0.8rem;
+    }
+
+    .about-page .room-selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .about-page .features-section,
+    .about-page .awards-section {
+        margin-top: 1.4rem;
+    }
+
+    .about-page .feature-item,
+    .about-page .award-item {
+        padding: 1rem;
+    }
+
+    .about-page .item-image,
+    .about-page .overview-image {
+        height: 170px;
+    }
+
+    .about-page .item-details,
+    .about-page .overview-content {
+        min-height: 0;
+    }
+
+    .about-page .suite-booking {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+/* Restored hover interactions */
+.about-page .feature-item,
+.about-page .award-item,
+.about-page .featured-suite-container,
+.about-page .selection-item,
+.about-page .overview-card,
+.amenities .amenity-feature,
+.amenities .amenity-card,
+.amenities .dining-section,
+.contact-page .contact-info-item,
+.contact-page .contact-form-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-page .feature-item:hover,
+.about-page .award-item:hover,
+.about-page .featured-suite-container:hover,
+.about-page .selection-item:hover,
+.about-page .overview-card:hover,
+.amenities .amenity-feature:hover,
+.amenities .amenity-card:hover,
+.amenities .dining-section:hover,
+.contact-page .contact-info-item:hover,
+.contact-page .contact-form-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 72%);
+}
+
+.about-page .item-image img,
+.about-page .overview-image img,
+.about-page .suite-image-wrapper img,
+.amenities .feature-image img,
+.amenities .dining-images .main-image {
+    transition: transform 0.4s ease;
+}
+
+.about-page .selection-item:hover .item-image img,
+.about-page .overview-card:hover .overview-image img,
+.about-page .suite-image-wrapper:hover img,
+.amenities .amenity-feature:hover .feature-image img,
+.amenities .dining-section:hover .dining-images .main-image {
+    transform: scale(1.05);
+}
+
+.about-page .btn-wrapper .btn-primary,
+.about-page .reserve-btn,
+.about-page .explore-rooms-btn,
+.amenities .btn-feature,
+.amenities .dining-actions .btn,
+.contact-page .btn-submit {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.about-page .btn-wrapper .btn-primary:hover,
+.about-page .reserve-btn:hover,
+.about-page .explore-rooms-btn:hover,
+.amenities .btn-feature:hover,
+.amenities .dining-actions .btn:hover,
+.contact-page .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-color), transparent 62%);
+}
+
+.contact-page .contact-info-item .info-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-page .contact-info-item:hover .info-icon {
+    transform: scale(1.08);
+    background: var(--accent-color);
+    color: var(--contrast-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-page .feature-item,
+    .about-page .award-item,
+    .about-page .featured-suite-container,
+    .about-page .selection-item,
+    .about-page .overview-card,
+    .amenities .amenity-feature,
+    .amenities .amenity-card,
+    .amenities .dining-section,
+    .contact-page .contact-info-item,
+    .contact-page .contact-form-card,
+    .about-page .item-image img,
+    .about-page .overview-image img,
+    .about-page .suite-image-wrapper img,
+    .amenities .feature-image img,
+    .amenities .dining-images .main-image,
+    .about-page .btn-wrapper .btn-primary,
+    .about-page .reserve-btn,
+    .about-page .explore-rooms-btn,
+    .amenities .btn-feature,
+    .amenities .dining-actions .btn,
+    .contact-page .btn-submit,
+    .contact-page .contact-info-item .info-icon {
+        transition: none !important;
     }
 }
